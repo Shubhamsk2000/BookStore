@@ -1,10 +1,12 @@
 import express from 'express';
 import connectDB from './db/connectDB.js';
-const app = express();
 import apiRoutes from './routes/apiRoutes.js'
+import cors from 'cors';    
+const app = express();
 const PORT = 3000;
 
 app.use(express.json());
+app.use(cors());
 // all routs for api 
 app.use('/api', apiRoutes);
 
